@@ -8,7 +8,7 @@
 /* Page */
 body{
     font-family: Arial, Helvetica, sans-serif;
-    background:#f3f5f9;
+    background:#e7e6e6;
     padding:40px;
 }
 
@@ -20,6 +20,7 @@ body{
     padding:30px;
     border-radius:10px;
     box-shadow:0 5px 20px rgba(0,0,0,0.1);
+    margin-bottom: 30px;
 }
 
 /* Title */
@@ -77,6 +78,34 @@ h1{
     border:1px solid #ccc;
 }
 
+#purchasing small{
+    visibility: hidden;
+}
+
+/* button styles*/
+#addToCart, #stopPurchasing{
+    padding:8px;
+    border-radius:5px;
+    border:1px solid #ccc;
+    margin-bottom:5px;
+    background-color: rgb(10, 10, 202);
+    color: white;
+}
+
+#addToCart{
+    margin-top: 20px;
+}
+
+#addToCart:hover{
+    background-color: rgb(2, 2, 105);
+    cursor: pointer;
+}
+#stopPurchasing:hover{
+    background-color: rgb(2, 2, 105);
+    cursor: pointer;
+}
+
+
 /* Message */
 #message{
     margin-top:10px;
@@ -90,7 +119,12 @@ h1{
 
 /* Result cart */
 .result{
-    margin-top:20px;
+    max-width:900px;
+    margin:auto;
+    background:white;
+    padding:30px;
+    border-radius:10px;
+    box-shadow:0 5px 20px rgba(0,0,0,0.1);
 }
 
 #finalList{
