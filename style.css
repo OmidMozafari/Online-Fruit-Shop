@@ -1,0 +1,127 @@
+/* Reset */
+*{
+    box-sizing: border-box;
+    margin:0;
+    padding:0;
+}
+
+/* Page */
+body{
+    font-family: Arial, Helvetica, sans-serif;
+    background:#f3f5f9;
+    padding:40px;
+}
+
+/* Main container */
+#container{
+    max-width:900px;
+    margin:auto;
+    background:white;
+    padding:30px;
+    border-radius:10px;
+    box-shadow:0 5px 20px rgba(0,0,0,0.1);
+}
+
+/* Title */
+h1{
+    text-align:center;
+    margin-bottom:30px;
+}
+
+/* Products + Purchasing layout */
+#ProductsContainer{
+    display:flex;
+    gap:40px;
+    margin-bottom:30px;
+}
+
+/* Products section */
+#products{
+    flex:1;
+}
+
+#products h2{
+    margin-bottom:10px;
+}
+#products h6{
+    margin-bottom:10px;
+    font-size: 12px;
+}
+
+#productList{
+    list-style:none;
+}
+
+#productList li{
+    background: linear-gradient(to right, #0c87f3, #067379);    color: white;
+    padding:10px;
+    margin-bottom:8px;
+    border-radius:6px;
+}
+
+/* Purchasing section */
+#purchasing{
+    flex:1;
+    display:flex;
+    flex-direction:column;
+}
+
+#purchasing label{
+    margin-top:10px;
+    margin-bottom:5px;
+}
+
+#purchasing input{
+    padding:8px;
+    border-radius:5px;
+    border:1px solid #ccc;
+}
+
+/* Message */
+#message{
+    margin-top:10px;
+    color:#e74c3c;
+}
+
+/* Current total */
+#purchasing h3{
+    margin-top:15px;
+}
+
+/* Result cart */
+.result{
+    margin-top:20px;
+}
+
+#finalList{
+    list-style:none;
+    margin-top:10px;
+}
+
+#finalList li{
+    padding:10px;
+    border-bottom:1px solid #ddd;
+}
+
+/* Final total */
+#finalTotal{
+    margin-top:15px;
+    font-size:18px;
+    font-weight:bold;
+}
+.productItem{
+    display: flex;
+    justify-content: space-between;
+    padding: 6px 10px;
+}
+.name{
+    width:120px;
+}
+
+.price{
+    width:80px;
+}
+
+.currency{
+    width:40px;
+}

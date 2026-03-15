@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> Online Shop</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div id="container">
+        <h1>Online Fruit Shop</h1>
+        <div id="ProductsContainer">
+            <div id="products">
+                <h2>Products</h2>
+                <h6>Note: All the prices are based on per one kilogram</h6>
+                <ul id="productList"></ul>
+            </div>
+            <div id="purchasing">
+                <label for="">Product Name</label>
+                <input type="text" id="productName">
+
+                <label for="">Quantity</label>
+                <input type="number" id="productQuantity">
+
+
+
+                <p id="message"></p>
+                <h3>Current Total: 
+                    <span id="total">0</span>
+                    AFN
+                </h3>
+            </div>
+        </div>
+
+        <div class="result">
+            <h2>Final Cart</h2>
+            <ul id="finalList"></ul>
+            <h3 id="finalTotal"></h3>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
