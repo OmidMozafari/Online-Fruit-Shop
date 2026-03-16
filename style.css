@@ -60,6 +60,7 @@ h1{
     border-radius:6px;
 }
 
+
 /* Purchasing section */
 #purchasing{
     flex:1;
@@ -158,4 +159,29 @@ h1{
 
 .currency{
     width:40px;
+}
+
+/* Purchase list items */
+#purchaseList li{
+    margin-top: 10px;
+    background: #0c87f3;    color: white;
+    padding:10px;
+    margin-bottom:8px;
+    border-radius:6px;
+    display: flex;
+    justify-content: space-between;
+    transition: all 0.6s ease;
+}
+.highlight{
+    background:#4be77c !important;
+    transition: background 0.8s ease;
+}
+.pricePurchaseList{
+    color: white;
+}
+
+
+/* show quantity error function */
+#invalidNumberError{
+    visibility: hidden;
 }

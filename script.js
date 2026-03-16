@@ -2,17 +2,24 @@ const productlist = document.getElementById("productList")
 const productName = document.getElementById("productName")
 const productQuantity = document.getElementById("productQuantity")
 const message = document.getElementById("message")
-const total = document.getElementById("total")
+let total = document.getElementById("total")
 const finalList = document.getElementById("finalList")
 const finalTotal = document.getElementById("finalTotal")
 const addToCart = document.getElementById("addToCart")
 const stopPurchasing = document.getElementById("stopPurchasing")
 const small = document.querySelector("#purchasing small")
+let currentTotal = 0
+const purchaseList = document.getElementById("purchaseList")
+const invalidNumberSmall = document.getElementById("invalidNumberError")
 
 // show error function
-function ShowError(){
+function showProductNameError(){
     small.style.color = "red"
     small.style.visibility = "visible"
+}
+function showInavlidQuantityError(){
+    invalidNumberSmall.style.color = "red"
+    invalidNumberSmall.style.visibility = "visible"
 }
 
 let products = [
@@ -59,23 +66,64 @@ function cartAdding(){
         choosenProductArray.push(finalWord)
 
     }
-    let finalChoosenName = choosenProductArray.join(" ")
 
-    quantity = productQuantity.value
+    let finalChoosenName = choosenProductArray.join(" ")
+    quantity = Number(productQuantity.value)
+    
+    let found = false
+    let moreThanZero = false
 
     for(c of products){
-
         if(finalChoosenName === c.name){
+            found = true
 
-            totalPrice = c.price * quantity
-            console.log(totalPrice);
+            if(quantity <= 0){
+                showInavlidQuantityError();
+            }else{
+
+                invalidNumberSmall.style.visibility = "hidden"
+                moreThanZero = true
+                totalPrice = c.price * quantity
+                currentTotal += totalPrice
+                
+                total.innerHTML = currentTotal
+                purchaseList.innerHTML += `<li> ${finalChoosenName}<span class="pricePurchaseList"></span></li>`
+                let pricePurchaseList = document.getElementsByClassName("pricePurchaseList")
+                pricePurchaseList[pricePurchaseList.length - 1].innerHTML = totalPrice
+                let lastItem = purchaseList.lastElementChild
+                
+                lastItem.classList.add("highlight")
+                
+                setTimeout(function(){
+                lastItem.classList.remove("highlight")
+                }, 800)
             
-
-        }else{
-            ShowError
+            productName.value = ""
+            productQuantity.value = ""
+            }
+            
+            
         }
     }
-    
+    if(!found){
+         showProductNameError()
+
+    }else{
+        small.style.visibility = "hidden"
+    }
+}
+
+// function stop purchasing
+function stopPurchasingItems(){
+    let purchaseNodeList = purchaseList.querySelectorAll("li")
+    purchaseNodeList.forEach(element => {
+        finalList.appendChild(element)
+    });
+    purchaseList.innerHTML = ""
+    currentTotal = 0
+    total.innerHTML = currentTotal
+
+
 }
 
 
@@ -84,5 +132,5 @@ function cartAdding(){
 
 //events section
 addToCart.addEventListener("click", cartAdding)
-// stopPurchasing.addEventListener("click", )
+stopPurchasing.addEventListener("click",stopPurchasingItems )
 
