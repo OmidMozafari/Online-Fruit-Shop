@@ -25,8 +25,9 @@
                 <small id="invalidNumberError">Please enter a value more than 0</small>
 
                 <button id="addToCart">Add To cart</button>
-
+                
                 <button id="stopPurchasing">Stop Purchasing</button>
+                <small id="stopPurchasingError">Kinldy, add something to the cart first then click this button</small>
 
 
 
@@ -41,9 +42,14 @@
 
     </div>
     <div class="result">
-        <h2>Final Cart</h2>
+        <div id="finalCartTitels">
+            <h2 id="finalTitle">Final Cart</h2>
+            <div id="finalTotalTitleValueContainer">
+            <h2 id="FinalTotalTitle">Final Price: </h2>
+            <span id="FinalTotalValue"></span>
+            </div>
+        </div>
         <ul id="finalList"></ul>
-        <h3 id="finalTotal"></h3>
     </div>
     <script src="script.js"></script>
 </body>

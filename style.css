@@ -185,3 +185,47 @@ h1{
 #invalidNumberError{
     visibility: hidden;
 }
+/* final cart styles */
+#finalCartTitels{
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    margin-bottom:30px ;
+}
+
+
+#finalTotalTitleValueContainer{
+    display: flex;
+    justify-content: center; 
+    align-items: center;       
+    gap: 10px;
+}
+#FinalTotalValue{
+    font-size: 22px;
+    font-weight: 700;
+}
+
+.finalCartItems{
+    margin-top: 10px;
+    background: #0c87f3;    color: white;
+    padding:10px;
+    margin-bottom:8px;
+    border-radius:6px;
+    display: flex;
+    justify-content: space-between;
+    transition: all 0.6s ease;
+}
+
+/* remove btn style */
+.removeBtn{
+    background-color: white;
+    font-size: 14px;
+    cursor: pointer;
+}
+.removeBtn:hover{
+   background-color: #3f0202;
+    
+}
+#stopPurchasingError  {
+    visibility: hidden
+}

@@ -4,13 +4,15 @@ const productQuantity = document.getElementById("productQuantity")
 const message = document.getElementById("message")
 let total = document.getElementById("total")
 const finalList = document.getElementById("finalList")
-const finalTotal = document.getElementById("finalTotal")
+const finalTotalValue = document.getElementById("FinalTotalValue")
 const addToCart = document.getElementById("addToCart")
 const stopPurchasing = document.getElementById("stopPurchasing")
 const small = document.querySelector("#purchasing small")
 let currentTotal = 0
 const purchaseList = document.getElementById("purchaseList")
 const invalidNumberSmall = document.getElementById("invalidNumberError")
+let stopPurchasingError = document.getElementById("stopPurchasingError")
+
 
 // show error function
 function showProductNameError(){
@@ -48,10 +50,11 @@ for (p of products){
         </li>`
 }
 
+
 // Adding to cart function
 function cartAdding(){
-
     let totalPrice = 0 
+
 
     let choosenProductArray = []
 
@@ -117,14 +120,34 @@ function cartAdding(){
 function stopPurchasingItems(){
     let purchaseNodeList = purchaseList.querySelectorAll("li")
     purchaseNodeList.forEach(element => {
+        
+        element.setAttribute("class", "finalCartItems")
+        
+        let btn = document.createElement("button")
+        btn.innerText = "❌"
+        
+        btn.classList.add("removeBtn")
+
+        element.appendChild(btn)
+    
+        element.classList.add("highlight")
+
+        setTimeout(function(){
+                element.classList.remove("highlight")
+                }, 800)
+        
         finalList.appendChild(element)
+        
     });
+    
+    finalTotalValue.innerHTML += currentTotal +" "+"AFN"
     purchaseList.innerHTML = ""
-    currentTotal = 0
     total.innerHTML = currentTotal
 
 
 }
+
+//function remove item from final cart list
 
 
 
@@ -132,5 +155,37 @@ function stopPurchasingItems(){
 
 //events section
 addToCart.addEventListener("click", cartAdding)
-stopPurchasing.addEventListener("click",stopPurchasingItems )
+
+stopPurchasing.addEventListener("click",()=>{
+    if(currentTotal <= 0){
+        stopPurchasingError.style.color = "red"
+        stopPurchasingError.style.visibility = "visible"
+
+        setTimeout(() => {
+        stopPurchasingError.style.visibility = "hidden"
+        }, 2000);
+        
+    }else{
+        stopPurchasingItems()
+        stopPurchasingError.style.visibility = "hidden"
+    }
+} )
+
+finalList.addEventListener("click", function(e){
+    if(e.target.classList.contains("removeBtn")){
+        const li = e.target.parentElement;
+        
+        const priceSpan = li.querySelector(".pricePurchaseList");
+
+        const itemPrice = Number(priceSpan.innerText); 
+
+        let currentTotal = Number(finalTotalValue.innerText.split(" ")[0]); // فقط عدد
+        currentTotal -= itemPrice;
+
+        finalTotalValue.innerText = currentTotal + " AFN";
+
+        li.remove();
+    }
+});
+
 
