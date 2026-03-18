@@ -90,9 +90,9 @@ function cartAdding(){
                 currentTotal += totalPrice
                 
                 total.innerHTML = currentTotal
-                purchaseList.innerHTML += `<li> ${finalChoosenName}<span class="pricePurchaseList"></span></li>`
-                let pricePurchaseList = document.getElementsByClassName("pricePurchaseList")
-                pricePurchaseList[pricePurchaseList.length - 1].innerHTML = totalPrice
+                purchaseList.innerHTML += `<li> ${finalChoosenName}<span class="pricePurchaseList">${totalPrice}</span></li>`
+                // let pricePurchaseList = document.getElementsByClassName("pricePurchaseList")
+                // pricePurchaseList[pricePurchaseList.length - 1].innerHTML = totalPrice
                 let lastItem = purchaseList.lastElementChild
                 
                 lastItem.classList.add("highlight")
@@ -139,11 +139,15 @@ function stopPurchasingItems(){
         finalList.appendChild(element)
         
     });
-    
-    finalTotalValue.innerHTML += currentTotal +" "+"AFN"
-    purchaseList.innerHTML = ""
-    total.innerHTML = currentTotal
+    let previousFinal = Number(finalTotalValue.innerText.split(" ")[0]) || 0
+    let newFinal = previousFinal + currentTotal
 
+    
+    // finalTotalValue.innerHTML = currentTotal +" "+"AFN"
+    finalTotalValue.innerHTML = newFinal + " AFN"
+    purchaseList.innerHTML = ""
+    currentTotal = 0
+    total.innerHTML = 0
 
 }
 
@@ -179,7 +183,7 @@ finalList.addEventListener("click", function(e){
 
         const itemPrice = Number(priceSpan.innerText); 
 
-        let currentTotal = Number(finalTotalValue.innerText.split(" ")[0]); // فقط عدد
+        currentTotal = Number(finalTotalValue.innerText.split(" ")[0]); // فقط عدد
         currentTotal -= itemPrice;
 
         finalTotalValue.innerText = currentTotal + " AFN";
