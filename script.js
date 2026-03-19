@@ -12,6 +12,8 @@ let currentTotal = 0
 const purchaseList = document.getElementById("purchaseList")
 const invalidNumberSmall = document.getElementById("invalidNumberError")
 let stopPurchasingError = document.getElementById("stopPurchasingError")
+let purchaseButtonContainer = document.createElement("div")
+
 
 
 // show error function
@@ -118,6 +120,7 @@ function cartAdding(){
 
 // function stop purchasing
 function stopPurchasingItems(){
+    purchaseButtonContainer.setAttribute("id","purchaseButtonContainer" )
     let purchaseNodeList = purchaseList.querySelectorAll("li")
     purchaseNodeList.forEach(element => {
         
@@ -137,6 +140,14 @@ function stopPurchasingItems(){
                 }, 800)
         
         finalList.appendChild(element)
+        finalList.appendChild(purchaseButtonContainer)
+        purchaseButtonContainer.innerHTML = `<button id = "purchaseButton">purchase</button>`
+        purchaseButton = document.getElementById("purchaseButton")
+
+        purchaseButton.addEventListener("click", ()=>{
+            window.location.href = "index2.html"
+        })
+        
         
     });
     let previousFinal = Number(finalTotalValue.innerText.split(" ")[0]) || 0
@@ -148,13 +159,9 @@ function stopPurchasingItems(){
     purchaseList.innerHTML = ""
     currentTotal = 0
     total.innerHTML = 0
+    
 
 }
-
-//function remove item from final cart list
-
-
-
 
 
 //events section
@@ -191,5 +198,3 @@ finalList.addEventListener("click", function(e){
         li.remove();
     }
 });
-
-
