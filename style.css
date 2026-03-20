@@ -1,0 +1,313 @@
+/* Reset */
+*{
+    box-sizing: border-box;
+    margin:0;
+    padding:0;
+}
+
+/* Page */
+body{
+    font-family: Arial, Helvetica, sans-serif;
+    background:#e7e6e6;
+    padding:40px;
+}
+
+/* Main container */
+#container{
+    max-width:900px;
+    margin:auto;
+    background:white;
+    padding:30px;
+    border-radius:10px;
+    box-shadow:0 5px 20px rgba(0,0,0,0.1);
+    margin-bottom: 30px;
+    position: relative;
+}
+
+/* Title */
+h1{
+    text-align:center;
+    margin-bottom:30px;
+}
+
+/* adminIcon */
+/* user profile icon */
+#userIcon{
+    position:absolute;
+    right:40px;
+    top:35px;
+    font-size:26px;
+}
+#userIcon:hover{
+    cursor: pointer;
+    font-size: 30px;
+}
+
+/* Products + Purchasing layout */
+#ProductsContainer{
+    display:flex;
+    gap:40px;
+    margin-bottom:30px;
+}
+
+/* Products section */
+#products{
+    flex:1;
+}
+
+#products h2{
+    margin-bottom:10px;
+}
+
+#products h6{
+    margin-bottom:10px;
+    font-size: 12px;
+}
+
+#productList{
+    list-style:none;
+}
+
+#productList li{
+    background: linear-gradient(to right, #0c87f3, #067379);
+    color: white;
+    padding:10px;
+    margin-bottom:8px;
+    border-radius:6px;
+}
+
+/* Purchasing section */
+#purchasing{
+    flex:1;
+    display:flex;
+    flex-direction:column;
+}
+
+#purchasing label{
+    margin-top:10px;
+    margin-bottom:5px;
+}
+
+#purchasing input{
+    padding:8px;
+    border-radius:5px;
+    border:1px solid #ccc;
+}
+
+#purchasing small{
+    visibility: hidden;
+}
+
+/* button styles*/
+#addToCart, #stopPurchasing{
+    padding:8px;
+    border-radius:5px;
+    border:1px solid #ccc;
+    margin-bottom:5px;
+    background-color: rgb(10, 10, 202);
+    color: white;
+}
+
+#addToCart{
+    margin-top: 20px;
+}
+
+#addToCart:hover{
+    background-color: rgb(2, 2, 105);
+    cursor: pointer;
+}
+
+#stopPurchasing:hover{
+    background-color: rgb(2, 2, 105);
+    cursor: pointer;
+}
+
+/* Message */
+#message{
+    margin-top:10px;
+    color:#e74c3c;
+}
+
+/* Current total */
+#purchasing h3{
+    margin-top:15px;
+}
+
+/* Result cart */
+.result{
+    max-width:900px;
+    margin:auto;
+    background:white;
+    padding:30px;
+    border-radius:10px;
+    box-shadow:0 5px 20px rgba(0,0,0,0.1);
+}
+
+#finalList{
+    list-style:none;
+    margin-top:10px;
+}
+
+#finalList li{
+    padding:10px;
+    border-bottom:1px solid #ddd;
+}
+
+/* Final total */
+#finalTotal{
+    margin-top:15px;
+    font-size:18px;
+    font-weight:bold;
+}
+
+.productItem{
+    display: flex;
+    justify-content: space-between;
+    padding: 6px 10px;
+}
+
+.name{
+    width:120px;
+}
+
+.price{
+    width:80px;
+}
+
+.currency{
+    width:40px;
+}
+
+/* Purchase list items */
+#purchaseList li{
+    margin-top: 10px;
+    background: #0c87f3;
+    color: white;
+    padding:10px;
+    margin-bottom:8px;
+    border-radius:6px;
+    display: flex;
+    justify-content: space-between;
+    transition: all 0.6s ease;
+}
+
+.highlight{
+    background:#4be77c !important;
+    transition: background 0.8s ease;
+}
+
+.pricePurchaseList{
+    color: white;
+}
+
+/* show quantity error function */
+#invalidNumberError{
+    visibility: hidden;
+}
+
+/* final cart styles */
+#finalCartTitels{
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    margin-bottom:30px ;
+}
+
+#finalTotalTitleValueContainer{
+    display: flex;
+    justify-content: center; 
+    align-items: center;       
+    gap: 10px;
+}
+
+#FinalTotalValue{
+    font-size: 22px;
+    font-weight: 700;
+}
+
+.finalCartItems{
+    margin-top: 10px;
+    background: #0c87f3;
+    color: white;
+    padding:10px;
+    margin-bottom:8px;
+    border-radius:6px;
+    display: flex;
+    justify-content: space-between;
+    transition: all 0.6s ease;
+}
+
+/* remove btn style */
+.removeBtn{
+    background-color: white;
+    font-size: 14px;
+    cursor: pointer;
+}
+
+.removeBtn:hover{
+   background-color: #3f0202;
+}
+
+#stopPurchasingError{
+    visibility: hidden;
+}
+
+/* purchase button styles */
+#purchaseButtonContainer{
+    display: flex;
+    justify-content: center;
+}
+#purchaseButton{
+    padding:8px;
+    border-radius:5px;
+    border:1px solid #ccc;
+    margin-bottom:5px;
+    background-color: rgb(10, 10, 202);
+    color: white;
+    width: 400px;
+}
+#purchaseButton:hover{
+    cursor: pointer;
+    background-color: rgb(2, 2, 105);
+
+}
+
+
+
+/* admin small page section */
+#adminSmallPage{
+    position: absolute;
+    top: 60px; /* کمی پایین تر از آیکن */
+    right: 20px;
+    background: #fff;
+    padding: 15px;
+    border-radius: 8px;
+    box-shadow: 0 2px 15px rgba(0,0,0,0.2);
+    display: none; /* ابتدا مخفی است */
+    flex-direction: column;
+    gap: 10px;
+    width: 200px;
+    z-index: 100;
+}
+#adminSmallPage{
+    font-size: 10px;
+    font-weight: 700;
+}
+
+  #adminSmallPage input{
+    padding: 8px;
+    border-radius: 5px;
+    border:1px solid #ccc;
+} 
+
+#adminSmallPage button{
+    padding: 8px;
+    border-radius:5px;
+    border:1px solid #ccc;
+    background-color: rgb(10, 10, 202);
+    color: white;
+    cursor: pointer;
+}
+#adminSmallPage button:hover{
+    background-color: rgb(2, 2, 105);
+} 

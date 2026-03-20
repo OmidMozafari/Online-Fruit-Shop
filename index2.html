@@ -4,9 +4,14 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Payment Page</title>
+    <link rel="stylesheet" href="style2.css">
 </head>
 <body>
+    <div id="container">
     <form action="">
+        <div id="formTitleContainer">
+        <h2>payment</h2>
+        </div>
         <input type="text" class="paymentInputs" placeholder="First name">
         <input type="text" class="paymentInputs" placeholder="Last name">
         <input type="text" class="paymentInputs" placeholder="Card number">
@@ -14,15 +19,20 @@
         <input type="text" class="paymentInputs" placeholder="MM / YY">
 
         <div id="paymentImagesContainer">
-            <img src="payment card images/mastercard.png" alt="master card logo" class="paymentImages">
+            <img src="payment card images/master.png" alt="master card logo" class="paymentImages">
             <img src="payment card images/visa.png" alt="visa card logo" class="paymentImages">
             <img src="payment card images/maestro.png" alt="maestro logo" class="paymentImages">
             <img src="payment card images/cartasi.png" alt="cartasi logo" class="paymentImages">
+            <img src="payment card images/paypal.png" alt="cartasi logo" class="paymentImages">
         </div>
 
-        <div class="submitContainerButton">
-            <button id="submitButton">submit payment</button>
+        <div id="buttons">
+            <input type="submit" id="submiButton">
+            <button id="mainPageButton" type="button">Main Page</button>
         </div>
+
     </form>
+    <script src="script2.js"></script>
+    </div>
 </body>
 </html>

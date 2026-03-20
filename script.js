@@ -13,7 +13,7 @@ const purchaseList = document.getElementById("purchaseList")
 const invalidNumberSmall = document.getElementById("invalidNumberError")
 let stopPurchasingError = document.getElementById("stopPurchasingError")
 let purchaseButtonContainer = document.createElement("div")
-
+let userIcon = document.getElementById("userIcon")
 
 
 // show error function
@@ -162,6 +162,18 @@ function stopPurchasingItems(){
     
 
 }
+// admin checking function user info icon
+function adminChecking(){
+    
+    userIcon.style.display = "visible"
+    // let hiddenAdminCode = "Online134134"
+    // let adminPassword = "@134134@#" 
+    //     const adminSmallPage = document.getElementById("adminModal")
+    //     const adminCodeInput = document.getElementById("adminCode")
+    //     const adminPasswordInput = document.getElementById("adminPassword")
+    //     const adminSubmit = document.getElementById("adminSubmit")
+        
+}
 
 
 //events section
@@ -171,9 +183,9 @@ stopPurchasing.addEventListener("click",()=>{
     if(currentTotal <= 0){
         stopPurchasingError.style.color = "red"
         stopPurchasingError.style.visibility = "visible"
-
+        
         setTimeout(() => {
-        stopPurchasingError.style.visibility = "hidden"
+            stopPurchasingError.style.visibility = "hidden"
         }, 2000);
         
     }else{
@@ -187,14 +199,24 @@ finalList.addEventListener("click", function(e){
         const li = e.target.parentElement;
         
         const priceSpan = li.querySelector(".pricePurchaseList");
-
+        
         const itemPrice = Number(priceSpan.innerText); 
-
+        
         currentTotal = Number(finalTotalValue.innerText.split(" ")[0]); // فقط عدد
         currentTotal -= itemPrice;
-
+        
         finalTotalValue.innerText = currentTotal + " AFN";
-
+        
         li.remove();
     }
 });
+
+// user icon event section
+userIcon.addEventListener("click", adminChecking)
+
+
+
+
+
+
+
