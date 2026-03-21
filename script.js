@@ -13,7 +13,16 @@ const purchaseList = document.getElementById("purchaseList")
 const invalidNumberSmall = document.getElementById("invalidNumberError")
 let stopPurchasingError = document.getElementById("stopPurchasingError")
 let purchaseButtonContainer = document.createElement("div")
+
 let userIcon = document.getElementById("userIcon")
+
+let smallPage = document.getElementById("adminSmallPage")
+let adminCode = document.getElementById("adminCode")
+let adminPassword = document.getElementById("adminPassword")
+let adminSmallPageForm = document.getElementById("adminSmallPage")
+
+let adminCodeSmall = document.getElementById("adminCodeSmall")
+let adminPasswordSmall = document.getElementById("adminPasswordSmall")
 
 
 // show error function
@@ -145,7 +154,7 @@ function stopPurchasingItems(){
         purchaseButton = document.getElementById("purchaseButton")
 
         purchaseButton.addEventListener("click", ()=>{
-            window.location.href = "index2.html"
+            window.location.href = "paymentPage.html"
         })
         
         
@@ -163,16 +172,36 @@ function stopPurchasingItems(){
 
 }
 // admin checking function user info icon
-function adminChecking(){
+function adminPage(){
     
-    userIcon.style.display = "visible"
-    // let hiddenAdminCode = "Online134134"
-    // let adminPassword = "@134134@#" 
-    //     const adminSmallPage = document.getElementById("adminModal")
-    //     const adminCodeInput = document.getElementById("adminCode")
-    //     const adminPasswordInput = document.getElementById("adminPassword")
-    //     const adminSubmit = document.getElementById("adminSubmit")
-        
+    smallPage.style.visibility = "visible"
+    smallPage.style.display = "flex"
+    smallPage.style.flexDirection = "column"
+}
+
+
+function adminChecking(){
+    let hiddenAdminCode = "Online134134"
+    let DBadminPassword = "@134134@#"
+
+    let codeValue = adminCode.value
+    let passValue = adminPassword.value
+
+    if(codeValue === hiddenAdminCode && passValue === DBadminPassword){
+        window.location.href = "addingPage.html"
+    }else{
+        if(codeValue !== hiddenAdminCode){
+            adminCodeSmall.style.display = "block"
+        }else{
+            adminCodeSmall.style.display = "none"
+        }
+
+        if(passValue !== DBadminPassword){
+            adminPasswordSmall.style.display = "block"
+        }else{
+            adminPasswordSmall.style.display = "none"
+        }
+    }
 }
 
 
@@ -212,11 +241,15 @@ finalList.addEventListener("click", function(e){
 });
 
 // user icon event section
-userIcon.addEventListener("click", adminChecking)
+userIcon.addEventListener("mouseenter", () => {
+    smallPage.style.display = "flex"
+})
 
+smallPage.addEventListener("mouseleave", () => {
+    smallPage.style.display = "none"
+})
 
-
-
-
-
-
+adminSmallPageForm.addEventListener("submit", (e)=>{
+    e.preventDefault()
+    adminChecking()
+})

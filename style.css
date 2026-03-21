@@ -40,7 +40,6 @@ h1{
 }
 #userIcon:hover{
     cursor: pointer;
-    font-size: 30px;
 }
 
 /* Products + Purchasing layout */
@@ -277,17 +276,17 @@ h1{
 /* admin small page section */
 #adminSmallPage{
     position: absolute;
-    top: 60px; /* کمی پایین تر از آیکن */
+    top: 60px; 
     right: 20px;
     background: #fff;
     padding: 15px;
     border-radius: 8px;
     box-shadow: 0 2px 15px rgba(0,0,0,0.2);
-    display: none; /* ابتدا مخفی است */
+    display: none;
     flex-direction: column;
-    gap: 10px;
     width: 200px;
     z-index: 100;
+    gap: 3px;
 }
 #adminSmallPage{
     font-size: 10px;
@@ -300,7 +299,7 @@ h1{
     border:1px solid #ccc;
 } 
 
-#adminSmallPage button{
+#adminSmallPageSubmitButton{
     padding: 8px;
     border-radius:5px;
     border:1px solid #ccc;
@@ -308,6 +307,12 @@ h1{
     color: white;
     cursor: pointer;
 }
-#adminSmallPage button:hover{
+#adminSmallPageSubmitButton{
     background-color: rgb(2, 2, 105);
 } 
+
+#adminCodeSmall, #adminPasswordSmall{
+    display: none;
+    color: red;
+    text-transform: capitalize;
+}
