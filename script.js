@@ -35,18 +35,26 @@ function showInavlidQuantityError(){
     invalidNumberSmall.style.visibility = "visible"
 }
 
-let products = [
-    {name: "fig", price: 80},
-    {name:"apple", price: 50},   
-    {name:"mongo", price: 270},   
-    {name:"banana", price: 150},   
-    {name:"pear", price: 100},   
-    {name:"coconut", price: 350},   
-    {name:"melon", price: 50},   
-    {name:"peach", price: 70},   
-    {name:"strawberry", price: 300},   
-    {name:"orange", price: 80},   
-]
+let products = JSON.parse(localStorage.getItem("products"))
+
+if(!products){
+    products = [
+        {name: "fig", price: 80},
+        {name:"apple", price: 50},   
+        {name:"mongo", price: 270},   
+        {name:"banana", price: 150},   
+        {name:"pear", price: 100},   
+        {name:"coconut", price: 350},   
+        {name:"melon", price: 50},   
+        {name:"peach", price: 70},   
+        {name:"strawberry", price: 300},   
+        {name:"orange", price: 80},   
+    ]
+
+    localStorage.setItem("products", JSON.stringify(products))
+}
+localStorage.setItem("products", JSON.stringify(products))
+
 let finalProducts = []
 for (p of products){
     let upper = p.name.charAt(0).toUpperCase();
@@ -181,8 +189,8 @@ function adminPage(){
 
 
 function adminChecking(){
-    let hiddenAdminCode = "Online134134"
-    let DBadminPassword = "@134134@#"
+    let hiddenAdminCode = "Online1"
+    let DBadminPassword = "@350350@#"
 
     let codeValue = adminCode.value
     let passValue = adminPassword.value
@@ -253,3 +261,6 @@ adminSmallPageForm.addEventListener("submit", (e)=>{
     e.preventDefault()
     adminChecking()
 })
+
+
+
