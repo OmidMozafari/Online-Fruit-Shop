@@ -78,3 +78,65 @@ form input{
     cursor: pointer;
     background-color: rgb(2, 2, 105);
 }
+
+/* responsive section */
+
+@media (min-width:480px){
+    #container{
+        width:420px;
+        margin:60px auto;
+}
+}
+
+@media (min-width:768px){
+    #container{ 
+        width:500px;
+        margin:80px auto;
+}
+#paymentImagesContainer{
+    width:70%;
+}
+.paymentImages{
+    width:45px;
+}
+}
+
+@media (min-width:1024px){
+    #container{
+        width:600px;
+        margin:100px auto;
+    }
+#paymentImagesContainer{
+    width:60%;
+}
+.paymentImages{
+    width:50px;
+}
+}
+
+@media (min-width:1440px){
+    #container{
+        width:700px;
+        margin:120px auto;
+}
+#paymentImagesContainer{
+    width:55%;
+}
+.paymentImages{
+    width:55px;
+}
+}
+
+@media (min-width:1920px){
+    #container{
+        width:800px;
+        margin:140px auto;
+}
+#paymentImagesContainer{
+    width:50%;
+}
+.paymentImages{
+    width:60px;
+}
+}
+

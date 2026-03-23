@@ -190,7 +190,7 @@ function adminPage(){
 
 function adminChecking(){
     let hiddenAdminCode = "Online1"
-    let DBadminPassword = "@350350@#"
+    let DBadminPassword = "350350"
 
     let codeValue = adminCode.value
     let passValue = adminPassword.value
